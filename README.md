@@ -97,7 +97,19 @@ plotants(vis = 'ALMA_3mm.ms',
 
 If the ```figfile``` is left empy, one can have access to an interactive plot where you can zoom in and out.
 
-Finally, we can explore the distribution of the data by using the task **```plotms```**
+Finally, we can explore the distribution of the data by using the task **```plotms```**. This task is quite powerful and provides several possibilities to plot and explore the data. We will use just some of them to have a quick look at the observed files. By typing:
+
+```
+inp plotms
+```
+
+we can see a long list of parameters to be used when plotting the data. However, we only need to specify one of them (the ```vis``` parameter) since all the others can be modified in a GUI interface available for plotms. Let's have a look at it by doing:
+
+```
+plotms(vis = 'ALMA_1mm.ms')
+```
+
+
 
 
 
