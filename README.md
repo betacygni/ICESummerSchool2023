@@ -249,12 +249,12 @@ Once we have the flux at 1mm and 3mm, we can proceed to calculate the mass of du
 
 $M_\mathrm{d+g} = \frac{S_\nu D^2}{B_\nu(T_\mathrm{d}) \kappa_\nu}$
 
-where $S_\nu$ is the flux density at frequency $\nu$; $D$ is the distance to the source (in our case XXX kpc); $B_\nu(T_\mathrm{d})$ is the black-body function at the dust temperature $T_\mathrm{d}$; and $\kappa_\nu$ is the dust opacity coefficient.
+where $M_\mathrm{d+g}$ is the mass of dust+gas; $S_\nu$ is the flux density at frequency $\nu$; $D$ is the distance to the source; $B_\nu(T_\mathrm{d})$ is the black-body function at the dust temperature $T_\mathrm{d}$; and $\kappa_\nu$ is the dust opacity coefficient. The black-body or Planck function is defined as: $B_\nu(T_\mathrm{d})=\frac{2h\nu^3}{c^2}\frac{1}{e^{h\nu/kT_\mathrm{d}}-1}$, with $h$ the Planck constant, $c$ the speed of light, and $k$ the Boltzman constant. The dust opacity can be obtained from softwares like ```optool``` as we saw in the first hands-on session, or can be directly derived from tabulated values such as those presented in [Ossenkopf and Henning (1994)](https://ui.adsabs.harvard.edu/abs/1994A%26A...291..943O/abstract)
 
-The black-body or Planck function is defined as:
+The equation above can be written, after replacing some numeric numbers, as:
 
 $`
-B_\nu(T_\mathrm{d}=\frac{2h\nu^3}{c^2}\frac{1}{e^{h\nu/kT_\mathrm{d}}-1}
+\left[\frac{M_\mathrm{d+g}}{M_\odot}\right] = 
 `$
 
  - Dust opacity: This can be determined from 
