@@ -247,7 +247,7 @@ Q.- Do you see differences? Why do you think the fluxes are the same or not the 
 
 Once we have the flux at 1mm and 3mm, we can proceed to calculate the mass of dust (and gas) in this source. For this, we can use some of the expressions that were introduced in the lectures. As a reminder, assuming that the emission is optically thin and comes from dust, we have:
 
-$M_\mathrm{d+g}$
+$M_\mathrm{d+g} = \frac{S_\nu D^2}{B_\nu(T_\mathrm{d}) \kappa_\nu}$
 
 
 
