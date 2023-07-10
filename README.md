@@ -254,7 +254,12 @@ where $M_\mathrm{d+g}$ is the mass of dust+gas; $S_\nu$ is the flux density at f
 The equation above can be written, after replacing some numeric numbers, as:
 
 $`
-\left[\frac{M_\mathrm{d+g}}{M_\odot}\right] = 
+\left[\frac{M_\mathrm{d+g}}{M_\odot}\right] = 0.00325
+\left[\frac{\nu}{\mathrm{THz}}\right]^{-3}
+\left[\frac{\kappa_\nu}{\mathrm{cm}^2\mathrm{g}^{-1}}\right]^{-1}
+\left[\exp\left(0.048\frac{\left[\nu/\mathrm{GHz}\right]}{\left[T_\mathrm{d}/\mathrm{K}\right]}\right)-1\right]
+\left[\frac{S_\nu}{\mathrm{Jy}}\right]
+\left[\frac{D}{\mathrm{kpc}}\right]^{2}
 `$
 
  - Dust opacity: This can be determined from 
