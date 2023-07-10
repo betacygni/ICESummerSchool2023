@@ -109,6 +109,26 @@ we can see a long list of parameters to be used when plotting the data. However,
 plotms(vis = 'ALMA_1mm.ms')
 ```
 
+You should see the following window:
+
+
+The left part of the window includes a list of tabs in which information can be modified, while the right panel shows the data to be plotted. The three main tabs that we will use are: **Data**, **Axes** and **Display**. We will now generate a series of plots to have a look at the data:
+
+ - **Plot the distribution of the visibilities in the (u,v) domain (Fourier domain)**
+   Select in the ```Axes``` tab the following options: X-axis: U and Y-axis: V, and click Plot
+   In the ```Display``` tab, select the Colorize option and use colors based on 'baseline'
+   Q.- How are the colors (baselines) distributed in the plot?
+   Q.- Do you see an inner gap at the center of the distribution? Which is its size?
+ - **Plot the flux (amplitude) as a function of the baseline**
+   Select in the ```Axes``` tab the following options: X-axis: baseline and Y-axis: Amp
+   Q.- Do you see some coherence in the distribution of points?
+   The baselines are just numbered randomly, and one can not have an accurate view of the physical properties of the source.
+   Let's try something different
+   In the ```Axes``` tab, select: X-axis: UVdist and Y-axis: Amp
+   Q.- Do you see some coherence in the amplitudes with respect to the uv-distance (i.e. baseline distance)?
+   Remember, the Fourier transform of a point-like source has a constant amplitude; while the Fourier transform of a Gaussian source would have a Gaussian distribution of the intensities. Do you think we are observing a point-like source?
+
+
 
 
 
