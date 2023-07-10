@@ -52,7 +52,7 @@ At the same time you will get an additional window ```Log Messages``` where you 
 
 ### Inspecting the data
 
-Once ```casa``` is started, we can have a look at the two data files. For this, we will use the task ```**listobs**```
+Once ```casa``` is started, we can have a look at the two data files. For this, we will use the task **```listobs```**
 
 ```
 listobs(vis = 'ALMA_1mm.ms',
