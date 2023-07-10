@@ -34,7 +34,7 @@ You can start ```casa``` by opening a terminal and typing:
 > casa
 ```
 
-You should see a text similar to this one (if you are using the version CASA 6.2.0):
+You should see a text similar to this one:
 
 ```
 optional configuration file config.py not found, continuing CASA startup without it
