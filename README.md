@@ -52,12 +52,31 @@ At the same time you will get an additional window ```Log Messages``` where you 
 
 ### Inspecting the data
 
-Once ```casa``` is started, we can have a look at the two data files. For this, we will use the task **```listobs```**
+Once ```casa``` is started, we can have a look at the two data files. For this, we will use the task **```listobs```**. All the tasks (or functions) in casa can be explored by typing ```inp TASKNAME```. In our current case, we can type
+
+```
+inp listobs
+```
+
+This will list all the possible parameters that can be modified before executing the task. The most important one is the ```vis``` parameter that indicates the name of the measurement set file (or visibility file) to be used. You can also specify the parameter ```listfile``` to save the output in an specific text file.
+
+Create two text files with the observation information of the two ```.ms``` files by doing:
 
 ```
 listobs(vis = 'ALMA_1mm.ms',
     listfile = 'ALMA_1mm_listobs.txt')
+
+listobs(vis = 'ALMA_3mm.ms',
+    listfile = 'ALMA_3mm_listobs.txt')
 ```
+
+**Questions:**
+ - What is the name of the source that has been observed? (tip: search for FieldName)
+ - Is it the same source in the two files (i.e. 1mm and 3mm)?
+ - What are the coordinates of the source in the sky? (tip: search for RA and Decl, i.e. Right Ascension and Declination)
+ - Are the coordinates the same for the two observed files?
+ - How many antennas were used in each one of the observations? (tip: search for the Antennas information)
+ - Which frequencies have been observed in the 1mm observations? And in the 3mm observations? (tip: search for RestFreq)
 
 
 
