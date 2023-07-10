@@ -122,6 +122,7 @@ The left part of the window includes a list of tabs in which information can be 
  - **Plot the flux (amplitude) as a function of the baseline**
    - Select in the ```Axes``` tab the following options: X-axis: baseline and Y-axis: Amp
    - Q.- Do you see some coherence in the distribution of points?
+   - Q.- There seems to be very bright baselines? Could it be that they are errors and should be excluded?
    - The baselines are just numbered randomly, and one can not have an accurate view of the physical properties of the source.
    - Let's try something different, in the ```Axes``` tab, select: X-axis: UVdist and Y-axis: Amp
    - Q.- Do you see some coherence in the amplitudes with respect to the uv-distance (i.e. baseline distance)?
@@ -133,6 +134,97 @@ The left part of the window includes a list of tabs in which information can be 
    - Select in the ```Axes``` tab the following options: X-axis: frequency and Y-axis: Amp
    - Q. Do the frequencies match with those in the listobs file?
 
+You can explore other plots by selecting different variables or colorizing based on different parameters.
+
+### Creating images
+
+The images can be produced from the visibilities through a process that is traditionally called "CLEANing". The main goal of this process is to remove the instrumental effect of the sparse sampling of the interferometer to try to create a scientific-ready image. This process requires a series of steps that are repeated iteratively until we reach the total number of iterations or a certain threshold determined by the user. Without entering into details, we can directly say that the task (or function) **```tclean```** takes care of this iterative process and CLEANs the data to produce a final image. By typing:
+
+```
+inp tclean
+```
+
+we obtain a long list of parameters that can be used to improve different aspects of the imaging process. ```tclean``` (or any similar function) is indeed a key function in all softwares dealing with radio-interferometric data. We will use just a limited number of parameters in this hands-on session. These are:
+ - ```vis``` : name of the ms file to be processed
+ - ```datacolumn``` : to indicate that we want to use the ```data``` column which is the only one available in the files
+ - ```imagename``` : name of the output files that will be produced (without extension)
+ - ```imsize``` : size in pixels of the image to be produced (in our case 512)
+ - ```cell``` : size of each pixel in arcseconds (in our case 0.02 arcsec)
+ - ```niter``` : number of iterations to be used
+ - ```interactive``` : set to False to speed up the process
+
+We will produce three different images by changing the number of iterations and explore them. For this, we can use:
+
+**Produce a dirty image**:
+```
+tclean(vis = 'ALMA_1mm.ms',
+    datacolumn = 'data',
+    imagename = 'ALMA_1mm_continuum_dirty',
+    imsize = 512,
+    cell = '0.02arcsec',
+    niter = 0,
+    interactive = False)
+```
+
+This will produce a series of files with the same basename ```ALMA_1mm_continuum_dirty``` and different extensions. We can have a look at two of them:
+ - ```.image``` : final image
+ - ```.residual``` : residual containing flux emission that have not been CLEANed
+
+In order to have a look at the images that have been produced we can use the task (or function) ```viewer``` or ```imview```. Which can be opened by typing:
+
+```
+viewer
+```
+
+This will open the following windows:
+
+XXXXX
+
+We can select the ```.image``` file and open it. This should appear in the main window of the ```viewer``` task, and look like this:
+
+XXXXXX
+
+By selecting on the "blue folder" icon (top bar) you can inspect more files and select another one to be opened. Select the .residual file and open it. With the "blue arrows" you can switch from one image to the other. Check the name of the file just above the images.
+
+Q.- Do you see some differences between the two images?
+
+The residuals are the same as the "CLEANed" image and this is just because we have set the number of iterations to 0, i.e., we have not CLEANed the data. Therefore, all the flux remains in the residuals. Let's proceed now to do some CLEANing.
+ 
+**Produce a CLEANed iamge**:
+```
+tclean(vis = 'ALMA_1mm.ms',
+    datacolumn = 'data',
+    imagename = 'ALMA_1mm_continuum_cleaned',
+    imsize = 512,
+    cell = '0.02arcsec',
+    niter = 1000,
+    interactive = False)
+```
+
+You can again use the ```viewer``` or ```imview``` task to open the new images that have been created. Check again the ```.image``` and ```.residual``` files.
+
+Q.- Do you see some differences between the residuals and the CLEANed image?
+Q.- Do you still see emission remaining in the residuals?
+
+We can CLEAN a bit deeper to remove as much as possible the emission in the residuals. The next step may take a much longer processing time.
+
+**Produce a deeper CLEANed image**:
+```
+tclean(vis = 'ALMA_1mm.ms',
+    datacolumn = 'data',
+    imagename = 'ALMA_1mm_continuum_cleaned_deeper',
+    imsize = 512,
+    cell = '0.02arcsec',
+    niter = 1000000,
+    interactive = False)
+```
+
+As in the two previous cases, inspect with the ```viewer``` (or ```imview```) task the newly generated images (the ```.image``` and ```.residual``` files).
+
+Q.- How much emission is remaining in the residuals?
+
+
+We have now produced an image for the 1mm file. Let's produce now similar images for the 3mm. For this, create the three images (**dirty**, **cleaned** and **cleaned_deeper**) for the ```ALMA_3mm.ms``` file. Inspect also with ```viewer``` the produced images.
 
 
 
