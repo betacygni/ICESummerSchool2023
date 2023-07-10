@@ -115,10 +115,10 @@ You should see the following window:
 The left part of the window includes a list of tabs in which information can be modified, while the right panel shows the data to be plotted. The three main tabs that we will use are: **Data**, **Axes** and **Display**. We will now generate a series of plots to have a look at the data:
 
  - **Plot the distribution of the visibilities in the (u,v) domain (Fourier domain)**
-   Select in the ```Axes``` tab the following options: X-axis: U and Y-axis: V, and click Plot
-   In the ```Display``` tab, select the Colorize option and use colors based on 'baseline'
-   Q.- How are the colors (baselines) distributed in the plot?
-   Q.- Do you see an inner gap at the center of the distribution? Which is its size?
+   - Select in the ```Axes``` tab the following options: X-axis: U and Y-axis: V, and click Plot
+   - In the ```Display``` tab, select the Colorize option and use colors based on 'baseline'
+   - Q.- How are the colors (baselines) distributed in the plot?
+   - Q.- Do you see an inner gap at the center of the distribution? Which is its size?
  - **Plot the flux (amplitude) as a function of the baseline**
    Select in the ```Axes``` tab the following options: X-axis: baseline and Y-axis: Amp
    Q.- Do you see some coherence in the distribution of points?
