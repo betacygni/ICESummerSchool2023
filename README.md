@@ -75,9 +75,29 @@ listobs(vis = 'ALMA_3mm.ms',
  - Is it the same source in the two files (i.e. 1mm and 3mm)?
  - What are the coordinates of the source in the sky? (tip: search for RA and Decl, i.e. Right Ascension and Declination)
  - Are the coordinates the same for the two observed files?
- - How many antennas were used in each one of the observations? (tip: search for the Antennas information)
  - Which frequencies have been observed in the 1mm observations? And in the 3mm observations? (tip: search for RestFreq)
+- How many antennas were used in each one of the observations? (tip: search for the Antennas information)
+ 
 
+Following that, we can have a look at how the antennas are distributed. For this, we can use the task **```plotants```**. You can explore the parameters by typing:
+
+```
+inp plotants
+```
+
+As in the previous case, the main parameter to consider is ```vis``` where the name of the measurement set can be specified. Furthermore, the output of the image can be saved in an image file using the parameter ```figfile```. Explore the distribution of the antennas by doing:
+
+```
+plotants(vis = 'ALMA_1mm.ms',
+    figfile = 'ALMA_1mm_plotants.png')
+
+plotants(vis = 'ALMA_3mm.ms',
+    figfile = 'ALMA_3mm_plotants.png')
+```
+
+If the ```figfile``` is left empy, one can have access to an interactive plot where you can zoom in and out.
+
+Finally, we can explore the distribution of the data by using the task **```plotms```**
 
 
 
