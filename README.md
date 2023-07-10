@@ -249,7 +249,15 @@ Once we have the flux at 1mm and 3mm, we can proceed to calculate the mass of du
 
 $M_\mathrm{d+g} = \frac{S_\nu D^2}{B_\nu(T_\mathrm{d}) \kappa_\nu}$
 
+where $S_\nu$ is the flux density at frequency $\nu$; $D$ is the distance to the source (in our case XXX kpc); $B_\nu(T_\mathrm{d})$ is the black-body function at the dust temperature $T_\mathrm{d}$; and $\kappa_\nu$ is the dust opacity coefficient.
 
+The black-body or Planck function is defined as:
+
+$`
+B_\nu(T_\mathrm{d}=\frac{2h\nu^3}{c^2}\frac{1}{e^{h\nu/kT_\mathrm{d}}-1}
+`$
+
+ - Dust opacity: This can be determined from 
 
 
 
