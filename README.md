@@ -13,5 +13,52 @@ For this, go to the webpage https://casa.nrao.edu/casa_obtaining.shtml and selec
 
 Downloading the corresponding CASA file may take some time. The installation should be relatively simple, requiring basically to un-compress the downloaded file and set an alias to the executable ```casa``` file.
 
+The next requirement consists of the data taken with ALMA to be analyzed. Due to the data volume, we will distribute these files via USB stick. We will have access to two different files:
+
+```
+ALMA_1mm.ms
+ALMA_3mm.ms
+```
+
+These two files have the extension ```.ms``` which refers to *measurement set* and contains the so-called visibilities observed by an interferometer. These visibilities correspond to the Fourier transform of the real sky emission of a source in the sky after being sampled and observed by ALMA.
+
+## Producing images with CASA
+
+Before producing the images, we will have a look at the data to have a better idea of what was observed.
+
+### Starting CASA
+
+You can start ```casa``` by opening a terminal and typing:
+
+```
+> casa
+```
+
+You should see a text similar to this one (if you are using the version CASA 6.2.0):
+
+```
+optional configuration file config.py not found, continuing CASA startup without it
+IPython 7.15.0 -- An enhanced Interactive Python.
+
+Using matplotlib backend: agg
+Telemetry initialized. Telemetry will send anonymized usage statistics to NRAO.
+You can disable telemetry by adding the following line to the config.py file in your rcdir (e.g. ~/.casa/config.py):
+telemetry_enabled = False
+--> CrashReporter initialized.
+CASA 6.2.0.124 -- Common Astronomy Software Applications [6.2.0.124]
+```
+
+At the same time you will get an additional window ```Log Messages``` where you will constantly get information of the functions (or tasks) that you execute.
+
+### Inspecting the data
+
+Once ```casa``` is started, we can have a look at the two data files:
+
+```
+listobs(vis = 'ALMA_1mm.ms',
+    listfile = 'ALMA_1mm_listobs.txt')
+```
+
+
 
 
