@@ -227,6 +227,31 @@ Q.- How much emission is remaining in the residuals?
 We have now produced an image for the 1mm file. Let's produce now similar images for the 3mm. For this, create the three images (**dirty**, **cleaned** and **cleaned_deeper**) for the ```ALMA_3mm.ms``` file. Inspect also with ```viewer``` the produced images.
 
 
+## Analyzing images of dust emission
+
+Once the images have been produced, we can use them to calculate fluxes, masses and other physical parameters. The images produces with CASA can be exported into FITS format using the task ```exportfits``` and be analyzed in other softwares (e.g., within python or ds9). For simplicity we will use some functionalities within CASA for the analysis proposed in this hands-on session.
+
+### Calculating fluxes
+
+We will start by calculating the fluxes of the main sources detected with ALMA. We can do this using the ```viewer``` (or ```imview```) function. Once the image is loaded within the viewer, you can zoom-in and define a polygon corresponding to the size-area of the source. All this can be done by using the icons available in the top bar of the viewer window.
+
+ - The lenses (to the right in the panel list) can be used to zoom in and out the image. You can zoom-in into the source to better see the structure and morphology.
+ - The icons with an ```R``` inside a square, a circle and an irregular polygon can be used to define different regions (or areas) within the map. You can define a polygon that matches the emission of the source. To define the polygon, you can click at the positions of the vertices within the map. The polygon can be closed by double-clicking with the mouse on the image.
+ - Once the polygon is defined you will see a series of new tabs to the right of the image. These tabs include information regarding ```Properties```, ```Statistics```, ```Fit```, ```File``` and ```Histogram```. With the polygon defined, go to the tab of Statistics. There you will find information on the ```FluxDensity``` in units of Jy. This is the flux of your source
+ - Obtain the flux of the source at both 1mm and 3mm
+
+You can also calcualte the fluxes for the ```_dirty``` and ```_cleaned``` images and compare with the ```_cleaned_deeper```.
+Q.- Do you see differences? Why do you think the fluxes are the same or not the same?
+
+### Derive dust masses
+
+Once we have the flux at 1mm and 3mm, we can proceed to calculate the mass of dust (and gas) in this source. For this, we can use some of the expressions that were introduced in the lectures. As a reminder, assuming that the emission is optically thin and comes from dust, we have:
+
+$M_\mathrm{d+g}$
+
+
+
+
 
 
 
