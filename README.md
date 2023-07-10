@@ -120,13 +120,18 @@ The left part of the window includes a list of tabs in which information can be 
    - Q.- How are the colors (baselines) distributed in the plot?
    - Q.- Do you see an inner gap at the center of the distribution? Which is its size?
  - **Plot the flux (amplitude) as a function of the baseline**
-   Select in the ```Axes``` tab the following options: X-axis: baseline and Y-axis: Amp
-   Q.- Do you see some coherence in the distribution of points?
-   The baselines are just numbered randomly, and one can not have an accurate view of the physical properties of the source.
-   Let's try something different
-   In the ```Axes``` tab, select: X-axis: UVdist and Y-axis: Amp
-   Q.- Do you see some coherence in the amplitudes with respect to the uv-distance (i.e. baseline distance)?
-   Remember, the Fourier transform of a point-like source has a constant amplitude; while the Fourier transform of a Gaussian source would have a Gaussian distribution of the intensities. Do you think we are observing a point-like source?
+   - Select in the ```Axes``` tab the following options: X-axis: baseline and Y-axis: Amp
+   - Q.- Do you see some coherence in the distribution of points?
+   - The baselines are just numbered randomly, and one can not have an accurate view of the physical properties of the source.
+   - Let's try something different, in the ```Axes``` tab, select: X-axis: UVdist and Y-axis: Amp
+   - Q.- Do you see some coherence in the amplitudes with respect to the uv-distance (i.e. baseline distance)?
+   - Remember, the Fourier transform of a point-like source has a constant amplitude; while the Fourier transform of a Gaussian source would have a Gaussian distribution of the intensities. Do you think we are observing a point-like source?
+ - **Plot the flux (amplitude) as a function of time (observing time)**
+   - Select in the ```Axes``` tab the following options: X-axis: time and Y-axis: Amp
+   - Q. Is the time that appears in the plot coincident with the information of the listobs file?
+ - **Plot the flux (amplitude) as a function of frequency**
+   - Select in the ```Axes``` tab the following options: X-axis: frequency and Y-axis: Amp
+   - Q. Do the frequencies match with those in the listobs file?
 
 
 
