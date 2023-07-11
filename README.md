@@ -111,7 +111,7 @@ plotms(vis = 'ALMA_1mm.ms')
 
 You should see the following window:
 
-![alt text](https://github.com/betacygni/ICESummerSchool2023/blob/main/ICESummerSchool2023_01.png)
+![Figure 01](https://github.com/betacygni/ICESummerSchool2023/blob/main/ICESummerSchool2023_01.png)
 
 The left part of the window includes a list of tabs in which information can be modified, while the right panel shows the data to be plotted. The three main tabs that we will use are: **Data**, **Axes** and **Display**. We will now generate a series of plots to have a look at the data:
 
@@ -179,11 +179,11 @@ viewer
 
 This will open the following windows:
 
-XXXXX
+![Figure 02](https://github.com/betacygni/ICESummerSchool2023/blob/main/ICESummerSchool2023_02.png)
 
 We can select the ```.image``` file and open it. This should appear in the main window of the ```viewer``` task, and look like this:
 
-XXXXXX
+![Figure 03](https://github.com/betacygni/ICESummerSchool2023/blob/main/ICESummerSchool2023_03.png)
 
 By selecting on the "blue folder" icon (top bar) you can inspect more files and select another one to be opened. Select the .residual file and open it. With the "blue arrows" you can switch from one image to the other. Check the name of the file just above the images.
 
@@ -274,7 +274,7 @@ For the dust temperature, we do not have (in this dataset) any direct measuremen
 
 For the dust opacity, we can make use of the values from [Ossenkopf and Henning (1994)](https://ui.adsabs.harvard.edu/abs/1994A%26A...291..943O/abstract). Check their Table 1, for which a fraction is shown in the image below. The last entry in the table corresponds to 1.3 mm (a wavelength similar to the one that we observed with ALMA). We have different options of opacities depending if we want to consider normal ```MRN grains```, ```MRN grains with thin ice mantles``` or ```MRN with thick ice mantles```. Within each of these groups we can use values for more diffuse gas, or for densities of $10^6$ cm$^{-3}$ and $10^8$ cm$^{-3}$.
 
-Finally, once has to take into account that the tabulated dust opacities refer only to dust. If you want 
+![Figure 04](https://github.com/betacygni/ICESummerSchool2023/blob/main/ICESummerSchool2023_04.png)
 
 **Questions**
 - Calculate the dust mass assuming 20 K, and dust opacities corresponding to dust grains of the different populations at a density of $10^6$ cm$^{-3}$.
