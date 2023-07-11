@@ -317,6 +317,13 @@ The new image ```ALMA_spindex.image``` can be opened using the ```viewer``` (or 
  - What is the typical value of the spectral index across the G31.41+0.31 region?
  - Do you see spatial variations? If so, what do you think is the physical origin of these variations?
 
+## For experts with CASA and ALMA
+
+If you have been using CASA and ALMA in the past, you may want to try new things in addition to what has been introduced before. We list here some possible aspects to explore:
+
+ - The 1mm and 3mm datafiles contain observations at four different frequencies each one. Create an image of each frequency sub-band individually (e.g., by using the parameter ```spw``` within ```tclean```. Do you see differences between the different individual images?
+ - Once you have all the individual images at the multiple frequencies (i.e., a total of 8, four in the 1mm band and four in the 3mm band), you can calculate the spectral index using all of them, or between pairs of images. How does the spectral index for the images in-band (i.e., for the four images within the 1mm file or the 3mm file) compare with the general spectral index derived using the two main images at 1mm and 3mm?
+ - You can also derive the mass from the flux measured in the 3mm image. How does the mass at 3mm compares with that at 1mm? What can you conclude regarding the dust properties based on these results?
 
 
 
