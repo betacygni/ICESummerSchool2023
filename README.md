@@ -247,6 +247,7 @@ Once the images have been produced, we can use them to calculate fluxes, masses 
 
  - [**Calculating fluxes**](https://github.com/betacygni/ICESummerSchool2023#calculating-fluxes)
  - [**Deriving dust masses**](https://github.com/betacygni/ICESummerSchool2023#deriving-dust-masses)
+ - [**Calculating densities**](https://github.com/betacygni/ICESummerSchool2023#calculating-densities)
  - [**Calculating spectral indices**](https://github.com/betacygni/ICESummerSchool2023#calculating-spectral-indices)
  - [**Spectral index maps**](https://github.com/betacygni/ICESummerSchool2023#spectral-index-maps)
 
