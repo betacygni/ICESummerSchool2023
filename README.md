@@ -243,7 +243,12 @@ We have now produced an image for the 1mm file. Let's produce now similar images
 
 ## Analyzing images of dust emission
 
-Once the images have been produced, we can use them to calculate fluxes, masses and other physical parameters. The images produces with CASA can be exported into FITS format using the task ```exportfits``` and be analyzed in other softwares (e.g., within python or ds9). For simplicity we will use some functionalities within CASA for the analysis proposed in this hands-on session.
+Once the images have been produced, we can use them to calculate fluxes, masses and other physical parameters. The images produces with CASA can be exported into FITS format using the task ```exportfits``` and be analyzed in other softwares (e.g., within python or ds9). In this hands-on session, and for simplicity, we will use some functionalities within CASA for the analysis proposed (thus, we do not need to create FITS files). The following part is divided in the following sections:
+
+ - [**Calculating fluxes**](https://github.com/betacygni/ICESummerSchool2023#calculating-fluxes)
+ - [**Deriving dust masses**](https://github.com/betacygni/ICESummerSchool2023#deriving-dust-masses)
+ - [**Calculating spectral indices**](https://github.com/betacygni/ICESummerSchool2023#calculating-spectral-indices)
+ - [**Spectral index maps**](https://github.com/betacygni/ICESummerSchool2023#spectral-index-maps)
 
 ### Calculating fluxes
 
@@ -257,7 +262,7 @@ We will start by calculating the fluxes of the main sources detected with ALMA. 
 You can also calcualte the fluxes for the ```_dirty``` and ```_cleaned``` images and compare with the ```_cleaned_deeper```.
 Q.- Do you see differences? Why do you think the fluxes are the same or not the same?
 
-### Derive dust masses
+### Deriving dust masses
 
 Once we have the flux at 1mm and 3mm, we can proceed to calculate the mass of dust in this source. For this, we can use some of the expressions that were introduced in the lectures. As a reminder, assuming that the emission is optically thin and comes from dust, we have:
 
@@ -294,7 +299,7 @@ For the dust opacity, we can make use of the values from [Ossenkopf and Henning 
 - Assuming that the dust-to-gas mass ratio is 0.01, you can calculate the total mass of dust plus gas by multiplying the dust mass by 100. Is this a massive dense core?
 - This object is in reality a hot core with a temperature of 200 K. Which is the mass that you derive if use the correct temperature? What would be the error if we use a wrong temperature of only 20 K?
 
-### Calculate spectral indices
+### Calculating spectral indices
 
 The spectral index $\alpha$ is defined as
 
