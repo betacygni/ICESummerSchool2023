@@ -11,7 +11,7 @@ Astronomers use telescopes to observe the sky. However, the data taken by the te
 **The first step is to download and install CASA**.
 For this, go to the webpage https://casa.nrao.edu/casa_obtaining.shtml and select the file available for your Operative System (Linux or Mac). The current stable version is CASA 6.5, however, other versions can also be downloaded in case you have older operative systems (check the section **Previous CASA releases** within the previous webpage).
 
-Downloading the corresponding CASA file may take some time. The installation should be relatively simple, requiring basically to execute the .dmg file within a MacOS system or to un-compress the downloaded file within a Linux system. One can then set an alias in your ```.bashrc``` or ```.bashr_profile``` files to make the executable ```casa``` available from anywhere.
+Downloading the corresponding CASA file may take some time. The installation should be relatively simple, requiring basically to execute the ```.dmg``` file within a MacOS system or to un-tar the downloaded file within a Linux system. After that, one can define an alias in their ```.bashrc``` or ```.bashr_profile``` files to make the executable ```casa``` available from anywhere.
 
 The next requirement consists of the data taken with ALMA to be analyzed. Due to the data volume, we will distribute these files via USB stick. We will have access to two different files:
 
