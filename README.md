@@ -256,7 +256,8 @@ We will start by calculating the fluxes of the main sources detected with ALMA. 
 
  - The lenses (to the right in the panel list) can be used to zoom in and out the image. You can zoom-in into the source to better see the structure and morphology.
  - The icons with an ```R``` inside a square, a circle and an irregular polygon can be used to define different regions (or areas) within the map. You can define a polygon that matches the emission of the source. To define the polygon, you can click at the positions of the vertices within the map. The polygon can be closed by double-clicking with the mouse on the image.
- - Once the polygon is defined you will see a series of new tabs to the right of the image. These tabs include information regarding ```Properties```, ```Statistics```, ```Fit```, ```File``` and ```Histogram```. With the polygon defined, go to the tab of Statistics. There you will find information on the ```FluxDensity``` in units of Jy. This is the flux of your source
+ - Once the polygon is defined you will see a series of new tabs to the right of the image. These tabs include information regarding ```Properties```, ```Statistics```, ```Fit```, ```File``` and ```Histogram```. With the polygon defined, go to the tab of Statistics. There you will find information on the ```FluxDensity``` in units of Jy. This is the flux of your source.
+ - Write down also the number of pixels included in your polygon (we will use this value later). This information is provided within the ```Statistics``` tab under the name ```Npts```
  - Obtain the flux of the source at both 1mm and 3mm
 
 You can also calcualte the fluxes for the ```_dirty``` and ```_cleaned``` images and compare with the ```_cleaned_deeper```.
@@ -298,6 +299,24 @@ For the dust opacity, we can make use of the values from [Ossenkopf and Henning 
 - Calculate the dust mass assuming 20 K, and dust opacities corresponding to dust grains of the different populations at a density of $10^6$ cm$^{-3}$.
 - Assuming that the dust-to-gas mass ratio is 0.01, you can calculate the total mass of dust plus gas by multiplying the dust mass by 100. Is this a massive dense core?
 - This object is in reality a hot core with a temperature of 200 K. Which is the mass that you derive if use the correct temperature? What would be the error if we use a wrong temperature of only 20 K?
+
+### Calculating densities
+
+Once we have the dust (and gas) mass, we can derive other parameters such as densities. For this we will need to make some assumptions and calculate the size of the objet as seen in the images.
+
+One approach is to fit a 2D-Gaussian to the emission and use the width of the Gaussian as the source size. You can do such a fit using functionalities within the ```viewer``` (or ```imview```) function. However, the source does not really look Gaussian. We can follow an even simpler approach and just calculate the size of the emission that we have in the map. When calculating the fluxes of the source, we also wrote down the number of pixels contained in the polygon (remember ```Npts``` derived in section [**Calculating fluxes**](https://github.com/betacygni/ICESummerSchool2023#calculating-fluxes)). This value corresponds to the number of pixels in our polygon, and can be used to obtain a first approximation of the source size. Let's do the following:
+ - Each pixel has a size of 0.02 arcsec x 0.02 arcsec as defined when creating the image (see [**Creating images**](https://github.com/betacygni/ICESummerSchool2023#creating-images))
+ - The pixel size can be converted from angular size to spatial size using the distance to the source (which is 3.75 kpc). Using trigonometry one can see that $size(\mathrm{AU}) = size(\mathrm{arcsec}) \times distance(\mathrm{pc})$. Which in our case results in a pixel size of 75 AU, or in cm: $1.12\times10^{15}$ cm
+ - The total area (in arcsec$^2$) of our source will be: $\mathrm{Npts} \times Area_\mathrm{pixel}$ with $Area_\mathrm{pixel}=0.02\times0.02$ arcsec$^{2}$ or  $1.25\times10^{30}$ cm$^{2}$
+ - Let's assume now that the core is a circle. Since we know that $Area_\mathrm{circle} = \pi R$^{2}$, we can equate our derived area (previous item in this list) with $Area_\mathrm{circle}$ and determine what is the radius of our source
+
+Now that we have the radius and the mass of the source, we can determine the density of our gas assuming it is an homogeneous sphere with its mass density described by
+
+$\rho = \frac{M_\mathrm{d+g}}{4/3 \pi R^3}$
+
+We can convert this into a number density by dividing by the mass of a particle (which can be simplied to be the mass of a hydrogen molecule: $2\times m_\mathrm{H}$, with $m_\mathrm{H}=1.673\times10^{24}$ g
+
+Q.- How does your density compare with typical densities of the diffuse gas (0.1-1 particles/cm$^3$), the cold neutral gas (10-100 particles/cm$^3$), the dense cores ($10^4$-$10^6$ particles/cm$^3$) or denser cores and disks ($>10^8$ cm$^3$)?
 
 ### Calculating spectral indices
 
