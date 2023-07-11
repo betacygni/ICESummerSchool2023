@@ -111,6 +111,7 @@ plotms(vis = 'ALMA_1mm.ms')
 
 You should see the following window:
 
+![alt text](http://url/to/img.png)
 
 The left part of the window includes a list of tabs in which information can be modified, while the right panel shows the data to be plotted. The three main tabs that we will use are: **Data**, **Axes** and **Display**. We will now generate a series of plots to have a look at the data:
 
