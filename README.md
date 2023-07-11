@@ -10,7 +10,9 @@ In the following, you will find these sections:
   - [**Producing images with CASA**](https://github.com/betacygni/ICESummerSchool2023#producing-images-with-casa)
   - [**Analyzing images of dust emission**](https://github.com/betacygni/ICESummerSchool2023#analyzing-images-of-dust-emission)
   - [**For experts with CASA and ALMA**](https://github.com/betacygni/ICESummerSchool2023#for-experts-with-casa-and-alma)
-    
+
+[**Starting CASA**](https://github.com/betacygni/ICESummerSchool2023#starting-casa)
+  
 ## Basic requirements
 
 Astronomers use telescopes to observe the sky. However, the data taken by the telescope requires some processing before one obtains a scientific-ready image or datafile. Traditionally, each telescope developes its own software to do this processing. In this hands-on session we will use the [CASA](https://casa.nrao.edu/) software which was developed to be a common processing software for many telescope facilities, in particular, radio telescopes. Among others, CASA can be used to process the data of telescopes such as [ALMA](https://almascience.eso.org/) and [VLA](https://science.nrao.edu/facilities/vla), while other facilities (e.g., [SMA](https://lweb.cfa.harvard.edu/sma/), [NOEMA](https://iram-institute.org/science-portal/noema/), [ATCA](https://www.narrabri.atnf.csiro.au/)) have adapted their procedures to also be compatible with CASA if the user prefers to use this software.
