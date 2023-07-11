@@ -245,11 +245,11 @@ Q.- Do you see differences? Why do you think the fluxes are the same or not the 
 
 ### Derive dust masses
 
-Once we have the flux at 1mm and 3mm, we can proceed to calculate the mass of dust (and gas) in this source. For this, we can use some of the expressions that were introduced in the lectures. As a reminder, assuming that the emission is optically thin and comes from dust, we have:
+Once we have the flux at 1mm and 3mm, we can proceed to calculate the mass of dust in this source. For this, we can use some of the expressions that were introduced in the lectures. As a reminder, assuming that the emission is optically thin and comes from dust, we have:
 
-$M_\mathrm{d+g} = \frac{S_\nu D^2}{B_\nu(T_\mathrm{d}) \kappa_\nu}$
+$M_\mathrm{d} = \frac{S_\nu D^2}{B_\nu(T_\mathrm{d}) \kappa_\nu}$
 
-where $M_\mathrm{d+g}$ is the mass of dust+gas; $S_\nu$ is the flux density at frequency $\nu$; $D$ is the distance to the source; $B_\nu(T_\mathrm{d})$ is the black-body function at the dust temperature $T_\mathrm{d}$; and $\kappa_\nu$ is the dust opacity coefficient. The black-body or Planck function is defined as: $B_\nu(T_\mathrm{d})=\frac{2h\nu^3}{c^2}\frac{1}{e^{h\nu/kT_\mathrm{d}}-1}$, with $h$ the Planck constant, $c$ the speed of light, and $k$ the Boltzman constant. The dust opacity can be obtained from softwares like ```optool``` as we saw in the first hands-on session, or can be directly derived from tabulated values such as those presented in [Ossenkopf and Henning (1994)](https://ui.adsabs.harvard.edu/abs/1994A%26A...291..943O/abstract)
+where $M_\mathrm{d}$ is the mass of dust; $S_\nu$ is the flux density at frequency $\nu$; $D$ is the distance to the source; $B_\nu(T_\mathrm{d})$ is the black-body function at the dust temperature $T_\mathrm{d}$; and $\kappa_\nu$ is the dust opacity coefficient. The black-body or Planck function is defined as: $B_\nu(T_\mathrm{d})=\frac{2h\nu^3}{c^2}\frac{1}{e^{h\nu/kT_\mathrm{d}}-1}$, with $h$ the Planck constant, $c$ the speed of light, and $k$ the Boltzman constant. The dust opacity can be obtained from softwares like ```optool``` as we saw in the first hands-on session, or can be directly derived from tabulated values such as those presented in [Ossenkopf and Henning (1994)](https://ui.adsabs.harvard.edu/abs/1994A%26A...291..943O/abstract)
 
 The equation above can be written, after replacing some numeric numbers, as:
 
@@ -262,7 +262,60 @@ $`
 \left[\frac{D}{\mathrm{kpc}}\right]^{2}
 `$
 
- - Dust opacity: This can be determined from 
+The different parameters to be used are:
+ - Flux density $S_\nu$ : use the fluxes determined at 1mm and at 3mm
+ - Frequency $\nu$ : use the frequencies for 1mm and 3mm that were found in the listobs files at the beginning of the session
+ - Distance to the source $D$ : G31.41+0.31 is located at a distance of 3.75 kpc
+
+We still need to find some values for the temperature and dust opacity.
+
+For the dust temperature, we do not have (in this dataset) any direct measurement of the temperature. Based on the informations that we have seen in the lectures, dense cores can have a temperature of about 20 K. Let's use this value.
+
+For the dust opacity, we can make use of the values from [Ossenkopf and Henning (1994)](https://ui.adsabs.harvard.edu/abs/1994A%26A...291..943O/abstract). Check their Table 1, for which a fraction is shown in the image below. The last entry in the table corresponds to 1.3 mm (a wavelength similar to the one that we observed with ALMA). We have different options of opacities depending if we want to consider normal ```MRN grains```, ```MRN grains with thin ice mantles``` or ```MRN with thick ice mantles```. Within each of these groups we can use values for more diffuse gas, or for densities of $10^6$ cm$^{-3}$ and $10^8$ cm$^{-3}$.
+
+Finally, once has to take into account that the tabulated dust opacities refer only to dust. If you want 
+
+**Questions**
+- Calculate the dust mass assuming 20 K, and dust opacities corresponding to dust grains of the different populations at a density of $10^6$ cm$^{-3}$.
+- Assuming that the dust-to-gas mass ratio is 0.01, you can calculate the total mass of dust plus gas by multiplying the dust mass by 100. Is this a massive dense core?
+- This object is in reality a hot core with a temperature of 200 K. Which is the mass that you derive if use the correct temperature? What would be the error if we use a wrong temperature of only 20 K?
+
+### Calculate spectral indices
+
+The spectral index $\alpha$ is defined as
+
+$S_\nu \propto \nu^\alpha$
+
+This value can be determined if we have observations at two different wavelengths (or frequencies). This is the case for our data!
+
+We can determine the spectral index by using the fluxes that we derived for 1mm and 3mm in the previous section of this hands-on exercise. Making use of the frequencies that we found in the listobs files, you can now determine what is the spectral index of G31.41+0.31
+
+**Questions**
+ - What is the spectral index $\alpha$ for the dust emission between 1 and 3mm for G31.41+0.31?
+ - The spectral index for the dust is usually $\alpha = \beta+2$, with $\beta$ ranging between 0 and 2. What is the value of $\beta$ that we obtain?
+
+### Spectral index maps
+
+Complementary to the average spectral index that we have defined for the whole dense core in G31.41+0.31, we can also generate spectral index maps using the two images that we produced at 1mm and 3mm. For this, we will use the task within CASA named ```immath```. Type within CASA the following:
+
+```
+inp immath
+```
+
+to list all the parameters of this task. In this case we will use the two images and calculate the spectral index by doing:
+
+```
+immath(imagename = ['ALMA_3mm_continuum_cleaned_deeper.image', 'ALMA_1mm_continuum_cleaned_deeper.image'],
+    mode = 'spix',
+    outfile = 'ALMA_spindex.image')
+```
+
+The new image ```ALMA_spindex.image``` can be opened using the ```viewer``` (or ```imview```) in a similar way to what was done with the previous images.
+
+**Questions**
+ - What is the typical value of the spectral index across the G31.41+0.31 region?
+ - Do you see spatial variations? If so, what do you think is the physical origin of these variations?
+
 
 
 
