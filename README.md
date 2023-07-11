@@ -275,7 +275,7 @@ where $M_\mathrm{d}$ is the mass of dust; $S_\nu$ is the flux density at frequen
 The equation above can be written, after replacing some numeric numbers, as:
 
 $`
-\left[\frac{M_\mathrm{d+g}}{M_\odot}\right] = 0.00325
+\left[\frac{M_\mathrm{d}}{M_\odot}\right] = 0.00325
 \left[\frac{\nu}{\mathrm{THz}}\right]^{-3}
 \left[\frac{\kappa_\nu}{\mathrm{cm}^2\mathrm{g}^{-1}}\right]^{-1}
 \left[\exp\left(0.048\frac{\left[\nu/\mathrm{GHz}\right]}{\left[T_\mathrm{d}/\mathrm{K}\right]}\right)-1\right]
@@ -315,7 +315,7 @@ Now that we have the radius and the mass of the source, we can determine the den
 
 $\rho = \frac{M_\mathrm{d+g}}{4/3 \pi R^3}$
 
-We can convert this into a number density by dividing by the mass of a particle (which can be simplied to be the mass of a hydrogen molecule: $2\times m_\mathrm{H}$, with $m_\mathrm{H}=1.673\times10^{24}$ g
+We can convert this into a number density by dividing by the mass of a particle (which can be simplied to be the mass of a hydrogen molecule: $2\times m_\mathrm{H}$, with $m_\mathrm{H}=1.673\times10^{-24}$ g
 
 Q.- How does your density compare with typical densities of the diffuse gas (0.1-1 particles/$\mathrm{cm}^3$), the cold neutral gas (10-100 particles/$\mathrm{cm}^3$), the dense cores ($10^4$-$10^6$ particles/$\mathrm{cm}^3$) or denser cores and disks ($>10^8$ $\mathrm{cm}^3$)?
 
